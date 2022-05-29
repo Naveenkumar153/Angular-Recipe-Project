@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 
 // modules
 import { Recipe } from '../recipe.model'; 
@@ -9,6 +9,7 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-list.component.scss']
 })
 export class RecipeListComponent implements OnInit {
+  @Output() singleReceipe = new EventEmitter<Recipe>();
   recipes: Recipe[] = [
     new Recipe(
       'A burger',
@@ -16,14 +17,17 @@ export class RecipeListComponent implements OnInit {
       'https://images.unsplash.com/photo-1525059696034-4967a8e1dca2?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHJlY2lwZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500'
     ),
     new Recipe(
-      'A burger',
-      'Sweet Burger in the world',
-      'https://images.unsplash.com/photo-1525059696034-4967a8e1dca2?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHJlY2lwZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500'
+      'Biriyani',
+      'Indian"s favorite recipe',
+      'https://user-images.immediate.co.uk/bbcgoodfood/recipes/user-recipe/url_4.jpg?quality=90&resize=556,505'
     )
   ]
   constructor() { }
 
   ngOnInit(): void {
+  }
+  onSelected(value:Recipe){
+    this.singleReceipe.emit(value);
   }
 
 }

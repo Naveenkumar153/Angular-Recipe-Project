@@ -9,18 +9,21 @@ import { Ingredient } from '../../shared/ingredient.model';
 export class ShopListComponent implements OnInit {
 
   ingredients: Ingredient[] = [
-    new Ingredient('Bananna',10),
-    new Ingredient('Bananna',10),
-    new Ingredient('Bananna',10),
-    new Ingredient('Bananna',10),
-    new Ingredient('Bananna',10),
-    new Ingredient('Bananna',10),
-    new Ingredient('Bananna',10),
+    // new Ingredient('Bananna',10),
+    // new Ingredient('Bananna',10),
+    // new Ingredient('Bananna',10),
+    // new Ingredient('Bananna',10),
+    // new Ingredient('Bananna',10),
+    // new Ingredient('Bananna',10),
+    // new Ingredient('Bananna',10),
   ];
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  addRecipe(value){
+    this.ingredients.push(value);
+    console.log(value);
+  }
 }

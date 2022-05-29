@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular-project';
+  onLoadCurrentPage:string = 'receipe';
+  onNavigation(page){
+    console.log(page);
+    this.onLoadCurrentPage = page;
+  }
 }

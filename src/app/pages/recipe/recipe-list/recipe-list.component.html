@@ -5,17 +5,8 @@
 </div>
 <hr>
 <div class="row mt-4">
-    <div class="col-xxl-12" *ngFor="let item of recipes" >
-        <a href="#" class="list-group-item clearfix mt-4" >
-            <div class="float-start">
-                <h4 class="list-group-item">{{item.name}}</h4>
-                <p class="list-group-item">{{item.description}}</p>
-            </div>
-            <span class="float-end">
-                <img [src]="item.imagePath" alt="" class="rounded img-thumbnail" style="max-height: 100px; ">
-            </span>
-        </a>
-        <app-recipe-item></app-recipe-item>
+    <div class="col-xxl-12" *ngFor="let recipe of recipes" >
+        <app-recipe-item [receipes]="recipe" (singleReceipe)="onSelected(recipe)"></app-recipe-item>
     </div>
 </div>
 

@@ -1,11 +1,16 @@
 <div class="row">
     <div class="col-xxl-12">
-        <img src="" alt="" srcset="" class=" img-fluid">
+        <img [src]="getTheReceipeData.imagePath" [alt]="getTheReceipeData.name" 
+          class="img-fluid"
+          style="max-height: 300px;"
+          >
     </div>
 </div>
 <div class="row">
-    <div class="col-xxl-12"></div>
-    <h1>Recipe Name</h1>
+    <div class="col-xxl-12">
+        <h1>{{getTheReceipeData.name}}</h1>
+        <p>{{getTheReceipeData.description}}</p>
+    </div>
 </div>
 <div class="row">
     <div class="col-xxl-12">
