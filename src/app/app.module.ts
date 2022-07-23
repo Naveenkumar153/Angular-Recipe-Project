@@ -1,5 +1,7 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { AppHeader } from './components/Base/header/header.component';
@@ -15,6 +17,7 @@ import { ShopListComponent } from './pages/Shop/shop-list/shop-list.component';
 import { ShopEditComponent } from './pages/Shop/shop-edit/shop-edit.component';
 import { DropdownDirective } from './shared/dropdown.model';
 import { ShopingList } from './services/shopinglist.service';
+import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { ShopingList } from './services/shopinglist.service';
     DropdownDirective,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,ReactiveFormsModule,
+    AppRoutingModule,
   ],
   providers: [ ShopingList ],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-<a href="#" class="list-group-item clearfix mt-4" (click)="onSelectReceipe()">
+<a  class="list-group-item clearfix mt-4" [routerLink]="[index]" routerLinkActive="active">
     <div class="float-start">
         <h4 class="list-group-item">{{receipes.name}}</h4>
         <p class="list-group-item">{{receipes.description}}</p>
